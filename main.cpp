@@ -10,10 +10,10 @@ using namespace std;
 void listdir(const char *name, int indent, string& key)
 {
     DIR *dir;
-    struct dirent *entry;
 
     if (!(dir = opendir(name)))
         return;
+    struct dirent *entry;
 
     while ((entry = readdir(dir)) != NULL) {
         if (entry->d_type == DT_DIR) {
